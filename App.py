@@ -1,27 +1,88 @@
 import streamlit as st
+import streamlit.components.v1 as components
 
+st.set_page_config(page_title="Mon CV", page_icon="📍", layout="wide")
 
-st.title("Calculatrice ")
+# Sidebar pour Contacts et Logiciels
+st.sidebar.header("📞 **Contacts**")
+st.sidebar.markdown("""
+**Adresse**  
+Thiès, Diamaguène, Rue 15
 
-st.write("---")
+**Téléphone**  
+[+221 76 158 94 25](tel:+221761589425)
 
-num1 = st.number_input("num1")
-num2 = st.number_input("num2")
+**Email**  
+[khabanegueye020@gmail.com](mailto:khabanegueye020@gmail.com)
+""")
 
-operation = st.radio("Choisissez une opération :", ("Addition", "Soustraction", "Multiplication", "Division"))
+st.sidebar.header("💻 **Logiciels maîtrisés**")
+logiciels = [
+    "QGIS / ArcGIS",
+    "AutoCAD", 
+    "Python",
+    "Pix4D",
+    "Excel",
+    "PowerPoint",
+    "Erdas"
+]
+for logiciel in logiciels:
+    st.sidebar.markdown(f"• **{logiciel}**")
 
-if st.button("Calculer"):
-    if operation == "Addition":
-        resultat = num1 + num2
-    elif operation == "Soustraction":
-        resultat = num1 - num2
-    elif operation == "Multiplication":
-        resultat = num1 * num2
-    elif operation == "Division":
-        if num2 == 0:
-            st.warning("Division par zéro impossible !")
-            resultat = "Non défini"
-        else:
-            resultat = num1 / num2
-    st.success(f"Résultat : {resultat}")
+st.sidebar.markdown("---")
+st.sidebar.markdown("*Géomaticien - L2 en cours*")
+
+# Main content
+st.title("📋 **Curriculum Vitae**")
+st.markdown("**Khabane Guèye** - Géomaticien")
+
+## Compétences
+st.header("🎯 **Compétences**")
+competences = [
+    "Maîtrise des techniques de levés topographiques",
+    "Conception et mise en page de cartes thématiques de qualité professionnelle",
+    "Utilisation des instruments : Niveau, Station totale(manuelle,rebotisées), Drone, GPS",
+    "Géo-référencement",
+    "Implanter une base de données",
+    "Capacité à implanter des projets (bâtiments, voirie) à partir de plans"
+]
+
+for comp in competences:
+    st.markdown(f"• **{comp}**")
+
+## Expériences Professionnelles
+st.header("💼 **Expériences Professionnelles**")
+
+st.subheader("**Juin - Septembre 2024**")
+st.markdown("**DIAM'O – Représentant commercial**")
+st.markdown("- Interroger les clients")
+st.markdown("- Faire connaître et vendre une eau spécifique")
+
+## Formation
+st.header("🎓 **Formation**")
+
+st.markdown("""
+**2025 - 2026**  
+**Centre d'entrepreneuriat et de développement technique (CEDT) le G15**  
+*Licence 2 en Géomatique (Formation en cours)*
+
+**2024 - 2025**  
+**Centre d'entrepreneuriat et de développement technique (CEDT) le G15**  
+*Licence 1 en Géomatique*
+
+**2022 - 2023**  
+**Yatinga**  
+*Baccalauréat*
+""")
+
+## Langues (déplacé en bas)
+st.header("🌐 **Langues**")
+col1, col2 = st.columns(2)
+with col1:
+    st.markdown("**Français**")
+    st.progress(1.0)
+with col2:
+    st.markdown("**Angalis**") 
+    st.progress(1.0)
+
 
