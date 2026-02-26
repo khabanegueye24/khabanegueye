@@ -32,7 +32,7 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("*Géomaticien - L2 en cours*")
 
 # Main content
-st.title("📋 **KHABANE GUEYE")
+st.title("KHABANE GUEYE")
 st.markdown(" Géomaticien")
 
 ## Compétences
