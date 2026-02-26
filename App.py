@@ -20,7 +20,6 @@ st.sidebar.header("💻 **Logiciels maîtrisés**")
 logiciels = [
     "QGIS / ArcGIS",
     "AutoCAD", 
-    "Python",
     "Pix4D",
     "Excel",
     "PowerPoint",
@@ -75,14 +74,5 @@ st.markdown("""
 *Baccalauréat*
 """)
 
-## Langues (déplacé en bas)
-st.header("🌐 **Langues**")
-col1, col2 = st.columns(2)
-with col1:
-    st.markdown("**Français**")
-    st.progress(1.0)
-with col2:
-    st.markdown("**Angalis**") 
-    st.progress(1.0)
 
 
